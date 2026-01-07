@@ -1,0 +1,121 @@
+/* Compact Horizontal Charts for Overview Page */
+
+.compact-charts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.compact-chart {
+    background: rgba(8, 10, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.compact-chart-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--green-accent);
+    text-align: center;
+}
+
+.compact-chart-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.compact-bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.compact-chart-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.compact-chart-label {
+    min-width: 100px;
+    font-size: 0.7rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.compact-chart-bar-container {
+    flex: 1;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+}
+
+.compact-chart-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(76, 175, 80, 0.8) 0%, 
+        rgba(139, 195, 74, 0.9) 100%);
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+    animation: compactChartFill 1.5s ease-out forwards;
+    animation-delay: calc(var(--chart-index, 0) * 0.05s);
+}
+
+@keyframes compactChartFill {
+    from {
+        width: 0;
+        opacity: 0.5;
+    }
+    to {
+        width: var(--chart-width, 0%);
+        opacity: 1;
+    }
+}
+
+.compact-chart-value {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--text);
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+}
+
+.compact-naturenlp-model {
+    background: linear-gradient(90deg, 
+        rgba(76, 175, 80, 0.9) 0%, 
+        rgba(139, 195, 74, 1) 100%);
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .compact-charts {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .compact-chart-label {
+        min-width: 80px;
+        font-size: 0.65rem;
+    }
+    
+    .compact-chart-bar-container {
+        height: 18px;
+    }
+    
+    .compact-chart-value {
+        font-size: 0.65rem;
+    }
+}
+

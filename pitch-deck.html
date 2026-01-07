@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>NatureNLP Pitch Deck — Efficiency-First NLP</title>
+    <meta name="description"
+        content="View and download the NatureNLP pitch deck. Learn about our efficiency-first approach to NLP and nature-inspired computation principles.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/styles/global.css">
+
+    <!-- Nature-Circuit Background Script -->
+    <script src="/assets/js/nature-circuit-network.js"></script>
+
+    <!-- Navigation Script -->
+    <script src="/scripts/nav.js" defer></script>
+
+    <style>
+        .pdf-container {
+            width: 100%;
+            height: 80vh;
+            min-height: 600px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .pdf-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .pdf-container {
+                height: 70vh;
+                min-height: 400px;
+            }
+        }
+    </style>
+</head>
+
+<body class="text-white antialiased">
+    <!-- Nature Background Layers -->
+    <div class="nature-bg"></div>
+    <div class="nature-pattern-bg"></div>
+    <canvas id="nature-hex-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-[100]" role="navigation" aria-label="Main navigation"
+        style="pointer-events: none;">
+        <div class="max-w-7xl mx-auto px-4 pt-4" style="pointer-events: auto;">
+            <div class="glass-card flex items-center justify-between p-4" style="position: relative; z-index: 100;">
+                <a href="/" class="text-xl font-bold" style="color: var(--green-accent);">🌿 NatureNLP</a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/" class="hover:text-green-400 transition">Home</a>
+                    <a href="/#videos" class="hover:text-green-400 transition">Videos</a>
+                    <a href="/pitch-deck.html" class="hover:text-green-400 transition">Pitch Deck</a>
+                    <a href="/overview.html" class="hover:text-green-400 transition">Technical Overview</a>
+                    <a href="/about.html" class="hover:text-green-400 transition">About</a>
+                    <a href="/updates.html" class="hover:text-green-400 transition">Updates</a>
+                    <a href="https://mas-ai.co" class="hover:text-green-400 transition" style="color: #ffd700;">←
+                        MAS-AI</a>
+                </div>
+                <button class="md:hidden" aria-label="Menu" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:hidden p-4 border-t border-green-500/20" id="mobile-menu">
+                <div class="flex flex-col gap-4">
+                    <a href="/" class="hover:text-green-400 transition">Home</a>
+                    <a href="/#videos" class="hover:text-green-400 transition">Videos</a>
+                    <a href="/pitch-deck.html" class="hover:text-green-400 transition">Pitch Deck</a>
+                    <a href="/overview.html" class="hover:text-green-400 transition">Technical Overview</a>
+                    <a href="/about.html" class="hover:text-green-400 transition">About</a>
+                    <a href="/updates.html" class="hover:text-green-400 transition">Updates</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Pitch Deck Section -->
+    <section class="px-4 py-20" style="margin-top: 80px;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--green-accent);">NatureNLP Pitch Deck
+                </h1>
+                <p class="text-gray-300 text-lg">Efficiency-First NLP Research</p>
+            </div>
+
+            <div class="glass-card p-6 md:p-12 mb-8">
+                <h2 class="text-2xl font-bold mb-6" style="color: var(--green-accent);">Summary</h2>
+                <div class="space-y-4 text-gray-300">
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--green-accent);">Problem</h3>
+                        <p>Compute costs and energy footprint of large language models are unsustainable. Current
+                            approaches prioritize performance over efficiency.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--green-accent);">Insight</h3>
+                        <p>Nature-inspired computation principles—oscillation, sparsity, regenerative learning—can
+                            enable efficient information processing without sacrificing performance.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--green-accent);">Prototype</h3>
+                        <p>NatureNLP v3-v6 evolution demonstrates oscillatory architectures and multi-task fine-tuning
+                            with improved efficiency metrics.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold mb-2" style="color: var(--green-accent);">Next Steps</h3>
+                        <p>Benchmarking, ablation studies, efficiency tests, and deployment demos. Building a framework
+                            that can be adopted by larger models.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card p-6 md:p-12 mb-8">
+                <div class="flex flex-wrap gap-4 mb-6">
+                    <a href="/pitch-deck/NatureNLP_Green_AI_Training.pdf" target="_blank" class="glass-button">
+                        Open PDF in New Tab
+                    </a>
+                    <a href="/pitch-deck/NatureNLP_Green_AI_Training.pdf" download class="glass-button">
+                        Download PDF
+                    </a>
+                </div>
+
+                <div class="pdf-container">
+                    <iframe src="/pitch-deck/NatureNLP_Green_AI_Training.pdf" type="application/pdf">
+                        <p>Your browser does not support PDFs. <a href="/pitch-deck/NatureNLP_Green_AI_Training.pdf"
+                                download>Download the PDF</a> instead.</p>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-4 py-12 text-center text-sm text-gray-500">
+        <p class="mb-4">© <a href="https://mas-ai.co" class="hover:text-green-400 transition"
+                style="color: #ffd700;">MAS-AI Technology Inc.</a> • NatureNLP: Efficiency-First NLP Research</p>
+        <div class="flex justify-center gap-6 flex-wrap mb-4">
+            <a href="/pitch-deck.html" class="hover:text-green-400 transition">Pitch Deck</a>
+            <a href="https://github.com/Masoud-Masoori" target="_blank" rel="noopener noreferrer"
+                class="hover:text-green-400 transition">GitHub</a>
+            <a href="https://www.linkedin.com/in/masoud-masoori" target="_blank" rel="noopener noreferrer"
+                class="hover:text-green-400 transition">LinkedIn</a>
+            <a href="mailto:masoud.masoori@mas-ai.co" class="hover:text-green-400 transition">Contact</a>
+        </div>
+        <div class="flex justify-center gap-4 flex-wrap">
+            <a href="https://mas-ai.co" class="hover:text-green-400 transition" style="color: #ffd700;">← Back to MAS-AI
+                Portfolio</a>
+            <span class="text-gray-600">•</span>
+            <a href="https://mas-ai.co#portfolio" class="hover:text-green-400 transition">View All Projects</a>
+        </div>
+    </footer>
+</body>
+
+</html>

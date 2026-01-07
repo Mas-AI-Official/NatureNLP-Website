@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover">
+    <title>NatureNLP Technical Overview — Architecture & Principles</title>
+    <meta name="description"
+        content="Learn about NatureNLP's architecture, nature-inspired principles, and how it achieves efficiency without sacrificing performance.">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/styles/global.css">
+
+    <!-- Compact Charts CSS -->
+    <link rel="stylesheet" href="/assets/css/compact-charts.css">
+
+    <!-- Nature-Circuit Background Script -->
+    <script src="/assets/js/nature-circuit-network.js"></script>
+
+    <!-- Navigation Script -->
+    <script src="/scripts/nav.js" defer></script>
+</head>
+
+<body class="text-white antialiased">
+    <!-- Nature Background Layers -->
+    <div class="nature-bg"></div>
+    <div class="nature-pattern-bg"></div>
+    <canvas id="nature-hex-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-[100]" role="navigation" aria-label="Main navigation"
+        style="pointer-events: none;">
+        <div class="max-w-7xl mx-auto px-4 pt-4" style="pointer-events: auto;">
+            <div class="glass-card flex items-center justify-between p-4" style="position: relative; z-index: 100;">
+                <a href="/" class="text-xl font-bold" style="color: var(--green-accent);">🌿 NatureNLP</a>
+                <div class="hidden md:flex items-center gap-6">
+                    <a href="/" class="hover:text-green-400 transition">Home</a>
+                    <a href="/#videos" class="hover:text-green-400 transition">Videos</a>
+                    <a href="/pitch-deck.html" class="hover:text-green-400 transition">Pitch Deck</a>
+                    <a href="/overview.html" class="hover:text-green-400 transition">Technical Overview</a>
+                    <a href="/about.html" class="hover:text-green-400 transition">About</a>
+                    <a href="/updates.html" class="hover:text-green-400 transition">Updates</a>
+                    <a href="https://mas-ai.co" class="hover:text-green-400 transition" style="color: #ffd700;">←
+                        MAS-AI</a>
+                </div>
+                <button class="md:hidden" aria-label="Menu" id="mobile-menu-btn">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <div class="hidden md:hidden p-4 border-t border-green-500/20" id="mobile-menu">
+                <div class="flex flex-col gap-4">
+                    <a href="/" class="hover:text-green-400 transition">Home</a>
+                    <a href="/#videos" class="hover:text-green-400 transition">Videos</a>
+                    <a href="/pitch-deck.html" class="hover:text-green-400 transition">Pitch Deck</a>
+                    <a href="/overview.html" class="hover:text-green-400 transition">Technical Overview</a>
+                    <a href="/about.html" class="hover:text-green-400 transition">About</a>
+                    <a href="/updates.html" class="hover:text-green-400 transition">Updates</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Technical Overview Section -->
+    <section class="px-4 py-20" style="margin-top: 80px;">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h1 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--green-accent);">Technical Overview
+                </h1>
+                <p class="text-gray-300 text-lg">NatureNLP Architecture & Principles</p>
+            </div>
+
+            <!-- Nature-Inspired Principles -->
+            <div class="glass-card p-8 md:p-12 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color: var(--green-accent);">Nature-Inspired
+                    Principles</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Oscillation</h3>
+                        <p class="text-gray-300">
+                            Oscillatory gating mechanisms enable sparse activation patterns, reducing compute
+                            while maintaining information flow. Inspired by natural rhythmic processes.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Sparsity</h3>
+                        <p class="text-gray-300">
+                            Selective activation of neurons based on input patterns. Only necessary computations
+                            are performed, reducing energy consumption.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Regenerative Learning
+                        </h3>
+                        <p class="text-gray-300">
+                            Learning patterns that adapt and regenerate, similar to natural systems.
+                            Enables efficient knowledge retention and transfer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Training vs Inference Efficiency -->
+            <div class="glass-card p-8 md:p-12 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color: var(--green-accent);">Training-Time vs
+                    Inference-Time Efficiency</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--green-accent);">Training-Time Efficiency
+                        </h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Oscillatory mechanisms reduce gradient computation overhead</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Sparse activation patterns during training</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Multi-task learning for efficient knowledge transfer</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Reduced training steps through better convergence</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4" style="color: var(--green-accent);">Inference-Time Efficiency
+                        </h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Selective computation based on input complexity</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Dynamic sparsity during inference</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Reduced memory footprint through efficient activations</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span style="color: var(--green);">•</span>
+                                <span>Lower latency and energy consumption per token</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Generalization to Larger Models -->
+            <div class="glass-card p-8 md:p-12 mb-8">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color: var(--green-accent);">Why It Can
+                    Generalize Upward</h2>
+                <p class="text-gray-300 mb-6">
+                    NatureNLP's architectural innovations are designed to be modular and scalable.
+                    The principles we develop can be adopted by larger models to improve their efficiency.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Modular Architecture</h3>
+                        <p class="text-gray-300">
+                            Oscillatory gating and sparsity mechanisms can be integrated into existing
+                            transformer architectures without requiring complete redesign.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Training Algorithms</h3>
+                        <p class="text-gray-300">
+                            Our training-time efficiency improvements are algorithmic, not model-specific.
+                            They can be applied to models of any size.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Proven Principles</h3>
+                        <p class="text-gray-300">
+                            Nature-inspired computation principles are universal. They scale from small
+                            prototypes to large production models.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-3" style="color: var(--green-accent);">Open Research</h3>
+                        <p class="text-gray-300">
+                            We're building a framework that the research community can adopt and extend.
+                            Our goal is to improve efficiency across the entire NLP ecosystem.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Diagram -->
+            <div class="glass-card p-8 md:p-12">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6" style="color: var(--green-accent);">Architecture
+                    Overview</h2>
+                <div class="flex justify-center">
+                    <svg width="100%" height="400" viewBox="0 0 800 400" class="max-w-4xl">
+                        <!-- Background -->
+                        <rect width="800" height="400" fill="rgba(26, 58, 26, 0.3)" rx="8" />
+
+                        <!-- Input Layer -->
+                        <rect x="50" y="150" width="120" height="100" fill="rgba(76, 175, 80, 0.2)" stroke="#4CAF50"
+                            stroke-width="2" rx="4" />
+                        <text x="110" y="205" text-anchor="middle" fill="#81c784" font-size="14"
+                            font-weight="bold">Input</text>
+
+                        <!-- Oscillatory Layer -->
+                        <rect x="220" y="100" width="140" height="200" fill="rgba(76, 175, 80, 0.3)" stroke="#4CAF50"
+                            stroke-width="2" rx="4" />
+                        <text x="290" y="130" text-anchor="middle" fill="#81c784" font-size="14"
+                            font-weight="bold">Oscillatory</text>
+                        <text x="290" y="150" text-anchor="middle" fill="#c8e6c9" font-size="12">Gating</text>
+
+                        <!-- Sparse Activation -->
+                        <rect x="220" y="220" width="140" height="80" fill="rgba(139, 195, 74, 0.3)" stroke="#66BB6A"
+                            stroke-width="2" rx="4" />
+                        <text x="290" y="250" text-anchor="middle" fill="#81c784" font-size="14"
+                            font-weight="bold">Sparse</text>
+                        <text x="290" y="270" text-anchor="middle" fill="#c8e6c9" font-size="12">Activation</text>
+
+                        <!-- Transformer Layers -->
+                        <rect x="410" y="50" width="120" height="300" fill="rgba(76, 175, 80, 0.2)" stroke="#4CAF50"
+                            stroke-width="2" rx="4" />
+                        <text x="470" y="80" text-anchor="middle" fill="#81c784" font-size="14"
+                            font-weight="bold">Transformer</text>
+                        <text x="470" y="100" text-anchor="middle" fill="#c8e6c9" font-size="12">Layers</text>
+
+                        <!-- Output Layer -->
+                        <rect x="580" y="150" width="120" height="100" fill="rgba(76, 175, 80, 0.2)" stroke="#4CAF50"
+                            stroke-width="2" rx="4" />
+                        <text x="640" y="205" text-anchor="middle" fill="#81c784" font-size="14"
+                            font-weight="bold">Output</text>
+
+                        <!-- Arrows -->
+                        <path d="M 170 200 L 210 200" stroke="#4CAF50" stroke-width="2" fill="none"
+                            marker-end="url(#arrowhead)" />
+                        <path d="M 360 200 L 400 200" stroke="#4CAF50" stroke-width="2" fill="none"
+                            marker-end="url(#arrowhead)" />
+                        <path d="M 530 200 L 570 200" stroke="#4CAF50" stroke-width="2" fill="none"
+                            marker-end="url(#arrowhead)" />
+
+                        <!-- Arrow marker -->
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#4CAF50" />
+                            </marker>
+                        </defs>
+                    </svg>
+                </div>
+                <p class="text-center text-gray-400 text-sm mt-4">
+                    Simplified architecture diagram showing oscillatory gating and sparse activation mechanisms
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-4 py-12 text-center text-sm text-gray-500">
+        <p class="mb-4">© <a href="https://mas-ai.co" class="hover:text-green-400 transition"
+                style="color: #ffd700;">MAS-AI Technology Inc.</a> • NatureNLP: Efficiency-First NLP Research</p>
+        <div class="flex justify-center gap-6 flex-wrap mb-4">
+            <a href="/pitch-deck.html" class="hover:text-green-400 transition">Pitch Deck</a>
+            <a href="https://github.com/Masoud-Masoori" target="_blank" rel="noopener noreferrer"
+                class="hover:text-green-400 transition">GitHub</a>
+            <a href="https://www.linkedin.com/in/masoud-masoori" target="_blank" rel="noopener noreferrer"
+                class="hover:text-green-400 transition">LinkedIn</a>
+            <a href="mailto:masoud.masoori@mas-ai.co" class="hover:text-green-400 transition">Contact</a>
+        </div>
+        <div class="flex justify-center gap-4 flex-wrap">
+            <a href="https://mas-ai.co" class="hover:text-green-400 transition" style="color: #ffd700;">← Back to MAS-AI
+                Portfolio</a>
+            <span class="text-gray-600">•</span>
+            <a href="https://mas-ai.co#portfolio" class="hover:text-green-400 transition">View All Projects</a>
+        </div>
+    </footer>
+</body>
+
+</html>

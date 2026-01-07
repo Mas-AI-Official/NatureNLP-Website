@@ -1,0 +1,39 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if any)
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment files
+.env
+.env.local
+
+# Large video files (now compressed to fit GitHub)
+# All videos are under 100MB after compression
+!videos/NatureNLP_Inspired_by_Nature.mp4
+!videos/NatureNLP_Training_AI_Explanation.mp4
+assets/video/*.mp4
+assets/video/*.mov
+assets/video/*.avi
+Documents/*.png

@@ -1,0 +1,122 @@
+/* Performance Charts Styles */
+
+.performance-charts {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.chart-container {
+    background: rgba(8, 10, 20, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.chart-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--green-accent);
+}
+
+.chart-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.chart-bar {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.chart-label {
+    min-width: 180px;
+    font-size: 0.875rem;
+    color: var(--text);
+    font-weight: 500;
+}
+
+.chart-bar-container {
+    flex: 1;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+}
+
+.chart-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, 
+        rgba(76, 175, 80, 0.8) 0%, 
+        rgba(139, 195, 74, 0.9) 100%);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.75rem;
+    transition: width 1.5s ease-out;
+    box-shadow: 0 0 12px rgba(76, 175, 80, 0.3);
+    width: 0;
+    animation: chartFill 1.5s ease-out forwards;
+    animation-delay: calc(var(--chart-index, 0) * 0.1s);
+}
+
+@keyframes chartFill {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--chart-width, 0%);
+    }
+}
+
+.chart-value {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text);
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+.naturenlp-model {
+    background: linear-gradient(90deg, 
+        rgba(76, 175, 80, 0.9) 0%, 
+        rgba(139, 195, 74, 1) 100%);
+    box-shadow: 0 0 16px rgba(76, 175, 80, 0.5);
+    animation: naturenlpPulse 2s ease-in-out infinite;
+}
+
+@keyframes naturenlpPulse {
+    0%, 100% {
+        box-shadow: 0 0 16px rgba(76, 175, 80, 0.5);
+    }
+    50% {
+        box-shadow: 0 0 24px rgba(76, 175, 80, 0.7);
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-label {
+        min-width: 120px;
+        font-size: 0.75rem;
+    }
+    
+    .chart-bar-container {
+        height: 28px;
+    }
+    
+    .chart-value {
+        font-size: 0.75rem;
+    }
+}
+
